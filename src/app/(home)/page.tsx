@@ -23,17 +23,14 @@ async function Home() {
   });
 
   return (
-    <div className="">
-      <PromoBanner 
-        src="/banner-home-01.png" 
-        alt="" 
-        />
+    <div className="flex flex-col gap-8">
+      <PromoBanner src="/banner-home-01.png" alt="" />
 
       <div className="mt-5 px-5">
         <Categories />
       </div>
 
-      <div className="mt-8">
+      <div>
         <SectionTitle>Ofertas</SectionTitle>
         <ProductList products={deals} />
       </div>
@@ -43,9 +40,16 @@ async function Home() {
         alt="Até 55% de desconto em mouses"
       />
 
-      <div className="mt-8">
+      <div>
         <SectionTitle>tECLADOS</SectionTitle>
         <ProductList products={keyBoards} />
+      </div>
+
+      <div>
+        <PromoBanner
+          src="/banner-home-03.png"
+          alt="Até 55% de desconto em mouses"
+        />
       </div>
     </div>
   );
