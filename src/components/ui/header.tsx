@@ -91,7 +91,7 @@ function Header() {
             )}
 
             <SheetClose asChild>
-              <Link href='/'>
+              <Link href="/">
                 <Button
                   variant="outline"
                   className="w-full justify-start gap-2"
@@ -122,9 +122,11 @@ function Header() {
         </SheetContent>
       </Sheet>
 
-      <h1 className="text-lg font-semibold">
-        <span className="text-primary">FSW</span> Store
-      </h1>
+      <Link href='/'>
+        <h1 className="text-lg font-semibold">
+          <span className="text-primary">FSW</span> Store
+        </h1>
+      </Link>
 
       <Button size="icon" variant="outline">
         <ShoppingCart />
