@@ -16,7 +16,7 @@ interface ICartContext {
   subTotal: number;
   total: number;
   totalDiscount: number;
-  addProductsToCart: (product: CardProduct, quantity: number) => void;
+  addProductsToCart: (product: CardProduct, quantity?: number) => void;
   decreaseProductQuantity: (productId: string) => void;
   increaseProductQuantity: (productId: string) => void;
   removeProduct: (productId: string) => void
@@ -55,7 +55,7 @@ const CartProvider = ({ children }: { children: ReactNode }) => {
 
   const totalDiscount = total - subTotal;
 
-  const addProductsToCart = (product: CardProduct) => {
+  const addProductsToCart = (product: CardProduct, quantity?: number) => {
     const productIsAlreadyOnCart = products.some(
       (cartProduct) => cartProduct.id === product.id,
     );
