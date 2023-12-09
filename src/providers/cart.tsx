@@ -16,7 +16,7 @@ interface ICartContext {
   subTotal: number;
   total: number;
   totalDiscount: number;
-  addProductsToCart: (product: CardProduct) => void;
+  addProductsToCart: (product: CardProduct, quantity: number) => void;
   decreaseProductQuantity: (productId: string) => void;
   increaseProductQuantity: (productId: string) => void;
   removeProduct: (productId: string) => void

@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import DiscountBadge from "@/components/ui/discount-badge";
+import { ProductWithTotalPrice } from "@/helpers/porduct";
 import { CartContext } from "@/providers/cart";
 import { Product } from "@prisma/client";
 import {  ArrowLeftIcon, ArrowRightIcon, TruckIcon } from "lucide-react";
@@ -9,7 +10,7 @@ import {useContext, useState} from 'react'
 
 
 interface ProductInfoProps {
-  product: Product
+  product: ProductWithTotalPrice;
 }
 
 const ProductInfo = ({
@@ -37,7 +38,7 @@ const ProductInfo = ({
       <h2 className="text-lg">{product.name}</h2>
 
       <div className="flex gap-2">
-        <h1 className="text-xl font-bold">R$ {product.totalPrice.toFixed(2)}</h1>
+        <h1 className="text-xl font-bold">R$ {product.totalPrice.toFixed(2) as any}</h1>
         {product.discountPercentage > 0 && (
           <DiscountBadge className="px-2 py-[2px]">
             {product.discountPercentage}
